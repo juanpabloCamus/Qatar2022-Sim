@@ -1,0 +1,20 @@
+@font-face {
+    font-family: arabicNormal;
+    src: url('../font/ArabicNormal.otf');
+}
+@font-face {
+    font-family: qatarBold;
+    src: url('../font/QatarBold.ttf');
+}
+
+@font-face {
+    font-family: qatarHeavy;
+    src: url('../font/QatarHeavy.ttf');
+}
+
+*{
+    margin: 0px;
+}
+
+
+

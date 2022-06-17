@@ -1,0 +1,17 @@
+.navContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: qatarBold;
+    background-color:#8d1c3d;
+    color: white;
+    padding: 18px;
+    padding-left: 100px;
+    padding-right: 100px;
+    gap: 5px;
+}
+
+.copa{
+    width: 100px;
+}
+
