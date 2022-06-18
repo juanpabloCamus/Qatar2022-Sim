@@ -1,0 +1,45 @@
+.groupContainer{
+    font-family: qatarBold;
+    color: white;
+    background-color:#8d1c3d;
+    width:12.5%;
+    height: 12.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    min-width: 150px;
+    min-height: 150px;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.groupName{
+    color:#e1c396;
+    border-bottom: 1px solid #e5cca7;
+}
+
+.CountriesContainer{
+    display: flex;
+    flex-direction:column;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    margin-top: 10px;
+    gap: 5px;
+}
+
+.CountryContainer{
+    background-color: #821637dd;
+    text-align: center;
+    display: flex;
+    padding: 3px;
+    gap: 9px;
+    min-width: 120px;
+    min-height: 25px;
+}
+
+.flag{
+    width: 15px;
+    border-radius: 50px;
+}
