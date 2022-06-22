@@ -21,6 +21,8 @@ function Group( {gnum, countries} ) {
     function handlePosition(e){
         let selectedCountry = e.target.alt === undefined ? e.target.outerText : e.target.alt
         
+        if (selectedCountry === '1' || selectedCountry === '2') return
+
         if (position.first === selectedCountry) {
             setPosition({...position, first:''})
             return
