@@ -37,6 +37,11 @@
     gap: 9px;
     min-width: 120px;
     min-height: 25px;
+    cursor: pointer;
+}
+
+.CountryContainer img, .CountryContainer label{
+    cursor: pointer;
 }
 
 .flag{
