@@ -11,7 +11,7 @@ function StagesContainer() {
    
     const rounds = [
         {
-        title: 'Round of 16',
+        title: '',
         seeds: [
             {
             id: 1,
@@ -57,7 +57,7 @@ function StagesContainer() {
         ],
         },
         {
-        title: 'Quarter finals',
+        title: '',
         seeds: [
             {
             id: 9,
@@ -82,7 +82,7 @@ function StagesContainer() {
         ],
         },
         {
-            title: 'Semifinals',
+            title: '',
             seeds: [
                 {
                 id: 13,
@@ -97,7 +97,7 @@ function StagesContainer() {
             ],
         },
         {
-            title: 'Finals',
+            title: '',
             seeds: [
                 {
                 id: 14,
@@ -113,15 +113,14 @@ function StagesContainer() {
     }
 
     const CustomSeed = ({seed, breakpoint, roundIndex, seedIndex}) => {
-    
         return (
-        <Seed mobileBreakpoint={breakpoint} style={{ fontSize: 16 }}>
+        <Seed mobileBreakpoint={breakpoint} style={{ fontSize: 16,  }}>
             <SeedItem>
             <div className='seed'>
                 <SeedTeam style={{ 
                     borderBottom: '1px solid #707070',
                     cursor:'pointer',
-                    paddingBottom:'10px'
+                    paddingBottom:'10px',
                     }} 
                     onClick={(e)=> handleWinnerRound(e,seed.id)}>{seed.teams[0]?.name || 'NO TEAM '}</SeedTeam>
                 <SeedTeam style={{
