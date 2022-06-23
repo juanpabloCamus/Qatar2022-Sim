@@ -1,5 +1,5 @@
 export const ADD_QUALIFIED = 'ADD_QUALIFIED'
-export const ADD_QUARTER_FINAL_TEAM = 'ADD_QUARTER_FINAL_TEAM'
+export const ADD_WINNER_TEAM = 'ADD_WINNER_TEAM'
 
 export const addCountriesGroup = (payload) => {
     return(
@@ -7,8 +7,8 @@ export const addCountriesGroup = (payload) => {
     )
 }
 
-export const addQuarterFinalTeam = (payload) => {
+export const addWinnerTeam = (payload) => {
     return(
-        {type: ADD_QUARTER_FINAL_TEAM, payload:payload}
+        {type: ADD_WINNER_TEAM, payload:payload}
     )
 }

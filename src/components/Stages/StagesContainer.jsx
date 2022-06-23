@@ -2,7 +2,7 @@ import React from 'react';
 import './StagesContainer.css';
 import { Bracket, RoundProps, Seed, SeedItem, SeedTeam, RenderSeedProps } from 'react-brackets';
 import { useSelector,useDispatch } from 'react-redux/es/exports';
-import { addQuarterFinalTeam } from '../../redux/actions';
+import { addWinnerTeam } from '../../redux/actions';
 
 function StagesContainer() {
 
@@ -87,12 +87,12 @@ function StagesContainer() {
                 {
                 id: 13,
                 date: new Date().toDateString(),
-                teams: [{ name: 'Winner 9' }, { name: 'Winner 10' }],
+                teams: [{ name: qualifiedTeams[9].Winner9 }, { name: qualifiedTeams[9].Winner10 }],
                 },
                 {
                     id: 14,
                     date: new Date().toDateString(),
-                    teams: [{ name: 'Winner 11' }, { name: 'Winner 12' }],
+                    teams: [{ name: qualifiedTeams[9].Winner11 }, { name: qualifiedTeams[9].Winner12 }],
                 },
             ],
         },
@@ -102,16 +102,14 @@ function StagesContainer() {
                 {
                 id: 14,
                 date: new Date().toDateString(),
-                teams: [{ name: 'Winner 13' }, { name: 'Winner 14' }],
+                teams: [{ name: qualifiedTeams[10].Winner13 }, { name: qualifiedTeams[10].Winner14 }],
                 },
             ],
         },
     ];
 
     const handleWinnerRound = (e,id)=>{  
-        if(id > 0 && id < 9){
-            dispatch(addQuarterFinalTeam({id:id,winner:e.target.innerHTML}))
-        }
+        dispatch(addWinnerTeam({id:id,winner:e.target.innerHTML}))
     }
 
     const CustomSeed = ({seed, breakpoint, roundIndex, seedIndex}) => {
@@ -126,7 +124,7 @@ function StagesContainer() {
             </SeedItem>
         </Seed>
         );
-      };
+    };
 
     return (
         <div className='bracketsContainer'>
