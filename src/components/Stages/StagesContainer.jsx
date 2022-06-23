@@ -115,13 +115,23 @@ function StagesContainer() {
     const CustomSeed = ({seed, breakpoint, roundIndex, seedIndex}) => {
     
         return (
-        <Seed mobileBreakpoint={breakpoint} style={{ fontSize: 12 }}>
+        <Seed mobileBreakpoint={breakpoint} style={{ fontSize: 16 }}>
             <SeedItem>
-            <div>
-                <SeedTeam onClick={(e)=> handleWinnerRound(e,seed.id)}>{seed.teams[0]?.name || 'NO TEAM '}</SeedTeam>
-                <SeedTeam onClick={(e)=>handleWinnerRound(e,seed.id)}>{seed.teams[1]?.name || 'NO TEAM '}</SeedTeam>
+            <div className='seed'>
+                <SeedTeam style={{ 
+                    borderBottom: '1px solid #707070',
+                    cursor:'pointer',
+                    paddingBottom:'10px'
+                    }} 
+                    onClick={(e)=> handleWinnerRound(e,seed.id)}>{seed.teams[0]?.name || 'NO TEAM '}</SeedTeam>
+                <SeedTeam style={{
+                    cursor:'pointer',
+                    paddingTop:'10px'
+                    }}
+                    onClick={(e)=>handleWinnerRound(e,seed.id)}>{seed.teams[1]?.name || 'NO TEAM '}</SeedTeam>
             </div>
             </SeedItem>
+            <label id='date'>{seed.date}</label>
         </Seed>
         );
     };

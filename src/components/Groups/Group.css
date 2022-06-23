@@ -8,10 +8,11 @@
     flex-direction: column;
     align-items: center;
     padding: 5px;
-    min-width: 150px;
-    min-height: 150px;
+    min-width: 300px;
+    min-height: 200px;
     border-radius: 5px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    padding-bottom: 20px;
 }
 
 .groupName{
@@ -22,11 +23,14 @@
 .CountriesContainer{
     display: flex;
     flex-direction:column;
-    align-self: center;
+    align-self: flex-start;
     justify-content: center;
     align-content: center;
     margin-top: 10px;
-    gap: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 10px;
+    min-width: 270px;
 }
 
 .CountryContainer{
@@ -34,17 +38,43 @@
     text-align: center;
     display: flex;
     padding: 3px;
-    gap: 9px;
-    min-width: 120px;
-    min-height: 25px;
+    gap: 13px;
+    min-width: max-content;
+    min-height: 40px;
     cursor: pointer;
+    align-items: center;
+    padding-left: 10px;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.CountryContainer:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: #9a294a;
 }
 
 .CountryContainer img, .CountryContainer label{
     cursor: pointer;
 }
 
+.CountryContainer label{
+    font-size: 22px;
+}
+
+.CountryContainer h6{
+    font-size: 15px;
+    color: black;
+    margin-left: 10%;
+    background-color: #e1c396;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+
 .flag{
-    width: 15px;
+    width: 30px;
+    height: 30px;
     border-radius: 50px;
 }

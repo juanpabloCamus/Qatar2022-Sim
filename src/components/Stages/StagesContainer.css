@@ -1,5 +1,21 @@
 .bracketsContainer{
-    margin-top: 50px;
-    display: flex;
+    margin-top: 100px;
+    margin-bottom: 200px;
     gap: 20px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.seed{
+    font-family: arabicNormal;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+#date{
+    margin-top: 10px;
+    font-family: arabicNormal;
+    font-size: 15px;
+    color: #e1c396;
 }
