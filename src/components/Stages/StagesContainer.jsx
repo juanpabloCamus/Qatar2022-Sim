@@ -1,10 +1,14 @@
 import React from 'react';
 import './StagesContainer.css';
 import { Bracket, RoundProps, Seed, SeedItem, SeedTeam, RenderSeedProps } from 'react-brackets';
-
+import { useSelector,useDispatch } from 'react-redux/es/exports';
+import { addQuarterFinalTeam } from '../../redux/actions';
 
 function StagesContainer() {
 
+    const qualifiedTeams = useSelector(state => state)
+    const dispatch = useDispatch()
+   
     const rounds = [
         {
         title: 'Round of 16',
@@ -12,42 +16,42 @@ function StagesContainer() {
             {
             id: 1,
             date: new Date().toDateString(),
-            teams: [{ name: 'A1' }, { name: 'B2' }],
+            teams: [{ name: qualifiedTeams[0].first }, { name: qualifiedTeams[1].second }],
             },
             {
             id: 2,
             date: new Date().toDateString(),
-            teams: [{ name: 'C1' }, { name: 'D2' }],
+            teams: [{ name: qualifiedTeams[2].first }, { name: qualifiedTeams[3].second }],
             },
             {
             id: 3,
             date: new Date().toDateString(),
-            teams: [{ name: 'E1' }, { name: 'F2' }],
+            teams: [{ name: qualifiedTeams[4].first }, { name: qualifiedTeams[5].second }],
             },
             {
                 id: 4,
                 date: new Date().toDateString(),
-                teams: [{ name: 'G1' }, { name: 'H2' }],
+                teams: [{ name: qualifiedTeams[6].first }, { name: qualifiedTeams[7].second }],
             },
             {
                 id: 5,
                 date: new Date().toDateString(),
-                teams: [{ name: 'A2' }, { name: 'B1' }],
+                teams: [{ name: qualifiedTeams[1].first }, { name: qualifiedTeams[0].second }],
             },
             {
                 id: 6,
                 date: new Date().toDateString(),
-                teams: [{ name: 'C2' }, { name: 'D1' }],
+                teams: [{ name: qualifiedTeams[3].first }, { name: qualifiedTeams[2].second }],
             },
             {
                 id: 7,
                 date: new Date().toDateString(),
-                teams: [{ name: 'E2' }, { name: 'F1' }],
+                teams: [{ name: qualifiedTeams[5].first }, { name: qualifiedTeams[4].second }],
             },
             {
                 id: 8,
                 date: new Date().toDateString(),
-                teams: [{ name: 'G2' }, { name: 'H1' }],
+                teams: [{ name: qualifiedTeams[7].first }, { name: qualifiedTeams[6].second }],
             },
             
         ],
@@ -58,22 +62,22 @@ function StagesContainer() {
             {
             id: 9,
             date: new Date().toDateString(),
-            teams: [{ name: 'Team A' }, { name: 'Team C' }],
+            teams: [{ name: qualifiedTeams[8].Winner1 }, { name: qualifiedTeams[8].Winner2 }],
             },
             {
                 id: 10,
                 date: new Date().toDateString(),
-                teams: [{ name: 'Team A' }, { name: 'Team C' }],
+                teams: [{ name: qualifiedTeams[8].Winner3 }, { name: qualifiedTeams[8].Winner4 }],
             },
             {
                 id: 11,
                 date: new Date().toDateString(),
-                teams: [{ name: 'Team A' }, { name: 'Team C' }],
+                teams: [{ name: qualifiedTeams[8].Winner5 }, { name: qualifiedTeams[8].Winner6 }],
             },
             {
                 id: 12,
                 date: new Date().toDateString(),
-                teams: [{ name: 'Team A' }, { name: 'Team C' }],
+                teams: [{ name: qualifiedTeams[8].Winner7 }, { name: qualifiedTeams[8].Winner8 }],
             },
         ],
         },
@@ -83,12 +87,12 @@ function StagesContainer() {
                 {
                 id: 13,
                 date: new Date().toDateString(),
-                teams: [{ name: 'Team A' }, { name: 'Team C' }],
+                teams: [{ name: 'Winner 9' }, { name: 'Winner 10' }],
                 },
                 {
                     id: 14,
                     date: new Date().toDateString(),
-                    teams: [{ name: 'Team A' }, { name: 'Team C' }],
+                    teams: [{ name: 'Winner 11' }, { name: 'Winner 12' }],
                 },
             ],
         },
@@ -98,26 +102,29 @@ function StagesContainer() {
                 {
                 id: 14,
                 date: new Date().toDateString(),
-                teams: [{ name: 'Team A' }, { name: 'Team C' }],
+                teams: [{ name: 'Winner 13' }, { name: 'Winner 14' }],
                 },
             ],
         },
     ];
 
+    const handleWinnerRound = (e,id)=>{  
+        if(id > 0 && id < 9){
+            dispatch(addQuarterFinalTeam({id:id,winner:e.target.innerHTML}))
+        }
+    }
+
     const CustomSeed = ({seed, breakpoint, roundIndex, seedIndex}) => {
-        // breakpoint passed to Bracket component
-        // to check if mobile view is triggered or not
-      
-        // mobileBreakpoint is required to be passed down to a seed
+    
         return (
-          <Seed mobileBreakpoint={breakpoint} style={{ fontSize: 12 }}>
+        <Seed mobileBreakpoint={breakpoint} style={{ fontSize: 12 }}>
             <SeedItem>
-              <div>
-                <SeedTeam style={{ color: 'red' }}>{seed.teams[0]?.name || 'NO TEAM '}</SeedTeam>
-                <SeedTeam>{seed.teams[1]?.name || 'NO TEAM '}</SeedTeam>
-              </div>
+            <div>
+                <SeedTeam onClick={(e)=> handleWinnerRound(e,seed.id)}>{seed.teams[0]?.name || 'NO TEAM '}</SeedTeam>
+                <SeedTeam onClick={(e)=>handleWinnerRound(e,seed.id)}>{seed.teams[1]?.name || 'NO TEAM '}</SeedTeam>
+            </div>
             </SeedItem>
-          </Seed>
+        </Seed>
         );
       };
 
@@ -129,3 +136,4 @@ function StagesContainer() {
 }
 
 export default StagesContainer;
+//style={{ color: 'red' }}

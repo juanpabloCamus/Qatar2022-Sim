@@ -1,9 +1,19 @@
 
 import Group from "../components/Groups/Group";
-import { ADD_QUALIFIED } from "./actions";
+import { ADD_QUALIFIED, ADD_QUARTER_FINAL_TEAM } from "./actions";
 
 const initialState = [
-    {},{},{},{},{},{},{},{}
+    {},{},{},{},{},{},{},{},{
+        Stage: 'Quarter finals',
+        Winner1:'Winner1',
+        Winner2:'Winner2',
+        Winner3:'Winner3',
+        Winner4:'Winner4',
+        Winner5:'Winner5',
+        Winner6:'Winner6',
+        Winner7:'Winner7',
+        Winner8:'Winner8',
+    }
 ]
 ;
 
@@ -48,6 +58,46 @@ const reducer = (state = initialState, action) =>{
                     if (letter !== 'H') return {...state}
                     state[7] = action.payload
                 }
+                default: return {...state}
+            }
+        }
+
+        case ADD_QUARTER_FINAL_TEAM:{
+            switch(action.payload.id){
+
+                case 1:{
+                    if (action.payload.id !== 1) return {...state}
+                    state[8].Winner1 = action.payload.winner
+                }
+                case 2:{
+                    if (action.payload.id !== 2) return {...state}
+                    state[8].Winner2 = action.payload.winner
+                }
+                case 3:{
+                    if (action.payload.id !== 3) return {...state}
+                    state[8].Winner3 = action.payload.winner
+                }
+                case 4:{
+                    if (action.payload.id !== 4) return {...state}
+                    state[8].Winner4 = action.payload.winner
+                }
+                case 5:{
+                    if (action.payload.id !== 5) return {...state}
+                    state[8].Winner5 = action.payload.winner
+                }
+                case 6:{
+                    if (action.payload.id !== 6) return {...state}
+                    state[8].Winner6 = action.payload.winner
+                }
+                case 7:{
+                    if (action.payload.id !== 7) return {...state}
+                    state[8].Winner7 = action.payload.winner
+                }
+                case 8:{
+                    if (action.payload.id !== 8) return {...state}
+                    state[8].Winner8 = action.payload.winner
+                }
+
                 default: return {...state}
             }
         }
