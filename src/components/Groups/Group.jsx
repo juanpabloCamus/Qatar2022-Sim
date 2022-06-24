@@ -4,12 +4,12 @@ import flag from '../../assets/flag.png'
 import { useDispatch } from 'react-redux';
 import { addCountriesGroup } from '../../redux/actions';
 
-function Group( {gnum, countries} ) {
+function Group( {groupName, countries, img} ) {
 
     const dispatch = useDispatch()
 
     const [position, setPosition] = useState({
-        group:gnum,
+        group:groupName,
         first:'',
         second:''
     })
@@ -43,14 +43,19 @@ function Group( {gnum, countries} ) {
         }
         
     }
-
+    
     return (
         <div className='groupContainer'>
-            <h2 className='groupName'>{gnum}</h2>
+            <h2 className='groupName'>{groupName}</h2>
             <div className='CountriesContainer'>
                 {countries.map(c => (
                     <div value={c} key={c} className='CountryContainer' onClick={handlePosition}>
-                        <img src={flag} alt={c} className='flag'></img>
+                        <img src={
+                            c === 'Saudi Arabia' ? img[0].SaudiArabia :
+                            c === 'Costa Rica' ? img[0].CostaRica :
+                            c === 'Korea Republic' ? img[0].KoreaRepublic :
+                            img[0][c] 
+                        } alt={c} className='flag'></img>
                         <label>{c}</label>
                         {position.first === c ? <h6>1</h6> : null}
                         {position.second === c ? <h6>2</h6> : null}
