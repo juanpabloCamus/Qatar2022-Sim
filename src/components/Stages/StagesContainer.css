@@ -7,6 +7,7 @@
     margin-right: auto;
     background-color: #821637dd;
     padding: 40px;
+    padding-right: 0px;
     border-radius: 5px;
 }
 
@@ -29,6 +30,33 @@
     text-align: center;
 }
 
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cup{
+    width: 50px;
+}
+
+.champion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 110px;
+    margin-bottom: 80px;
+    font-family: qatarBold;
+    color: #e1c396;
+    font-size: 20px;
+}
+
+.champion h3{
+    margin-top: 15px;
+    text-align: center;
+}
+
 @media (max-width: 992px) {
 
     #swipe{
@@ -36,5 +64,13 @@
         display: block;
         font-family: qatarBold;
         text-align: center;
+    }
+
+    .champion{
+        display: none;
+    }
+
+    .main{
+        display: block;
     }
 }

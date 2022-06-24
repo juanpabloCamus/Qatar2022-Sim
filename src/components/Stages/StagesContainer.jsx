@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './StagesContainer.css';
 import { Bracket, RoundProps, Seed, SeedItem, SeedTeam, RenderSeedProps } from 'react-brackets';
 import { useSelector,useDispatch } from 'react-redux/es/exports';
 import { addWinnerTeam } from '../../redux/actions';
+import cup from '../../assets/copa.png'
 
 function StagesContainer() {
 
     const qualifiedTeams = useSelector(state => state)
     const dispatch = useDispatch()
+    const [champion, setChampion] = useState({
+        state: false,
+        name:''
+    })
    
     const rounds = [
         {
@@ -100,7 +105,7 @@ function StagesContainer() {
             title: '',
             seeds: [
                 {
-                id: 14,
+                id: 15,
                 date: 'Sun Dec 18 2022',
                 teams: [{ name: qualifiedTeams[10].Winner13 }, { name: qualifiedTeams[10].Winner14 }],
                 },
@@ -109,7 +114,10 @@ function StagesContainer() {
     ];
 
     const handleWinnerRound = (e,id)=>{  
-        if(e.target.innerHTML === 'NO TEAM ' || e.target.innerHTML.includes('Winner')) return 
+        if(e.target.innerHTML === 'NO TEAM ' || e.target.innerHTML.includes('Winner')) return
+        if(id === 15){
+            return setChampion({state: true,name:e.target.innerHTML})
+        } 
         dispatch(addWinnerTeam({id:id,winner:e.target.innerHTML}))
     }
 
@@ -139,7 +147,15 @@ function StagesContainer() {
     return (
         <div className='bracketsContainer'>
             <h3 id='swipe'>Swipe to left to see the next rounds</h3>
+            <div className='main'>
             <Bracket rounds={rounds} renderSeedComponent={CustomSeed}/>
+            <div className='champion'>
+                <img id='cup' src={cup}></img>
+                {
+                    champion.state ? <h3>Congrats {champion.name}!</h3> : null
+                }
+            </div>
+            </div>
         </div> 
     );
 }
