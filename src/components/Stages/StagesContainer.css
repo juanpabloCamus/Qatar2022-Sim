@@ -73,4 +73,8 @@
     .main{
         display: block;
     }
+
+    .bracketsContainer{
+        padding: 20px;
+    }
 }

@@ -146,7 +146,7 @@ function StagesContainer() {
 
     return (
         <div className='bracketsContainer'>
-            <h3 id='swipe'>Swipe to left to see the next rounds</h3>
+            <h3 id='swipe'>Swipe left to see the next rounds</h3>
             <div className='main'>
             <Bracket rounds={rounds} renderSeedComponent={CustomSeed}/>
             <div className='champion'>
