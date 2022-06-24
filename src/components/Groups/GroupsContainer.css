@@ -17,3 +17,20 @@
     width: 100%;
     flex-wrap: wrap;
 }
+
+#restart{
+    margin-top: 50px;
+    background-color: #e1c396;
+    border: none;
+    font-size: 25px;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    color:#681d34;
+    font-weight: 700;
+}
+
+#restart:hover{
+    background-color: #e8d8c0;
+}
+

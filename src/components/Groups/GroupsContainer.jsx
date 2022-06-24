@@ -1,8 +1,15 @@
 import React from 'react';
 import './GroupsContainer.css';
 import Group from './Group';
+import { useDispatch } from 'react-redux';
 
 function GroupsContainer() {
+    const dispatch = useDispatch()
+
+    function handleRestart(){
+        window.location.reload()
+    }
+
     return (
         <div className='groupsContainer'>
             <div className='subGroupsContainer'>
@@ -58,6 +65,7 @@ function GroupsContainer() {
                     KoreaRepublic:'https://flagpedia.net/data/flags/w580/kr.webp',
                 }]} countries={['Portugal', 'Ghana', 'Uruguay', 'Korea Republic']}/>
             </div>
+            <button onClick={handleRestart} id='restart'>Restart</button>
         </div>
     );
 }

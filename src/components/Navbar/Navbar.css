@@ -8,7 +8,8 @@
     padding: 18px;
     padding-left: 100px;
     padding-right: 100px;
-    gap: 5px;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
 .copa{

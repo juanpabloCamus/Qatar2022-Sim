@@ -1,6 +1,6 @@
 
 import Group from "../components/Groups/Group";
-import { ADD_QUALIFIED, ADD_WINNER_TEAM } from "./actions";
+import { ADD_QUALIFIED, ADD_WINNER_TEAM, RESTART } from "./actions";
 
 const initialState = [
     {},{},{},{},{},{},{},{},{
@@ -137,6 +137,35 @@ const reducer = (state = initialState, action) =>{
 
                 default: return {...state}
             }
+        }
+
+        case RESTART:{
+            state = [
+                {},{},{},{},{},{},{},{},{
+                    Stage: 'Quarter finals',
+                    Winner1:'Winner 1',
+                    Winner2:'Winner 2',
+                    Winner3:'Winner 3',
+                    Winner4:'Winner 4',
+                    Winner5:'Winner 5',
+                    Winner6:'Winner 6',
+                    Winner7:'Winner 7',
+                    Winner8:'Winner 8',
+                },
+                {
+                    Stage: 'Semifinals',
+                    Winner9:'Winner 9',
+                    Winner10:'Winner 10',
+                    Winner11:'Winner 11',
+                    Winner12:'Winner 12'
+                },
+                {
+                    Stage: 'Finals',
+                    Winner13:'Winner 13',
+                    Winner14:'Winner 14'
+                }
+            
+            ]
         }
 
         default: return {...state}

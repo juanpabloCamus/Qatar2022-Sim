@@ -1,5 +1,5 @@
 .bracketsContainer{
-    margin-top: 100px;
+    margin-top: 60px;
     margin-bottom: 200px;
     gap: 20px;
     width: 70%;
@@ -21,4 +21,20 @@
     font-family: arabicNormal;
     font-size: 15px;
     color: #e1c396;
+}
+
+#swipe{
+    display: none;
+    font-family: qatarBold;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+
+    #swipe{
+        margin-bottom: 10px;
+        display: block;
+        font-family: qatarBold;
+        text-align: center;
+    }
 }
