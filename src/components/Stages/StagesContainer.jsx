@@ -16,7 +16,7 @@ function StagesContainer() {
    
     const rounds = [
         {
-        title: '',
+        title: 'Round of 16',
         seeds: [
             {
             id: 1,
@@ -62,7 +62,7 @@ function StagesContainer() {
         ],
         },
         {
-        title: '',
+        title: 'Quarterfinals',
         seeds: [
             {
             id: 9,
@@ -87,7 +87,7 @@ function StagesContainer() {
         ],
         },
         {
-            title: '',
+            title: 'Semifinals',
             seeds: [
                 {
                 id: 13,
@@ -102,7 +102,7 @@ function StagesContainer() {
             ],
         },
         {
-            title: '',
+            title: 'Final',
             seeds: [
                 {
                 id: 15,

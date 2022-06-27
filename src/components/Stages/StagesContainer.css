@@ -2,13 +2,14 @@
     margin-top: 60px;
     margin-bottom: 200px;
     gap: 20px;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+    width: fit-content;
+    margin-left: 10%;
+    margin-right: 10%;
     background-color: #821637dd;
     padding: 40px;
     padding-right: 0px;
     border-radius: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .seed{
@@ -78,3 +79,9 @@
         padding: 20px;
     }
 }
+
+.hYCtJu{
+    color: #e1c396 !important;
+    font-family: qatarBold;
+    font-size: 18px;
+} 
