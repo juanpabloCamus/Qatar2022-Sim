@@ -132,12 +132,14 @@ function StagesContainer() {
                     cursor:'pointer',
                     paddingBottom:'10px',
                     }} 
-                    onClick={(e)=> handleWinnerRound(e,seed.id)}>{seed.teams[0]?.name || 'NO TEAM '}</SeedTeam>
+                    onClick={(e)=> handleWinnerRound(e,seed.id)}>{seed.teams[0]?.name || 'NO TEAM '}
+                </SeedTeam>
                 <SeedTeam style={{
                     cursor:'pointer',
                     paddingTop:'10px'
                     }}
-                    onClick={(e)=>handleWinnerRound(e,seed.id)}>{seed.teams[1]?.name || 'NO TEAM '}</SeedTeam>
+                    onClick={(e)=>handleWinnerRound(e,seed.id)}>{seed.teams[1]?.name || 'NO TEAM '}
+                </SeedTeam>
             </div>
             </SeedItem>
             <label id='date'>{seed.date}</label>
@@ -153,18 +155,18 @@ function StagesContainer() {
                     champion.state ? <h3>Congrats {champion.name}!</h3> : null
                 }
             </div>
-        <div className='bracketsContainer'>
-            <h3 id='swipe'>Swipe left to see the next rounds</h3>
-            <div className='main'>
-            <Bracket rounds={rounds} renderSeedComponent={CustomSeed}/>
-            <div className='champion'>
-                <img id='cup' src={cup}></img>
-                {
-                    champion.state ? <h3>Congrats {champion.name}!</h3> : null
-                }
+            <div className='bracketsContainer'>
+                <h3 id='swipe'>Swipe left to see the next rounds</h3>
+                <div className='main'>
+                <Bracket rounds={rounds} renderSeedComponent={CustomSeed}/>
+                <div className='champion'>
+                    <img id='cup' src={cup}></img>
+                    {
+                        champion.state ? <h3>Congrats {champion.name}!</h3> : null
+                    }
+                </div>
+                </div>
             </div>
-            </div>
-        </div>
         </div> 
     );
 }

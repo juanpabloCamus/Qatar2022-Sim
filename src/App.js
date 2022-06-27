@@ -10,6 +10,7 @@ function App() {
       <Navbar/>
       <GroupsContainer/>
       <StagesContainer/>
+      <label className='by'>By <a href='https://www.linkedin.com/in/juan-pablo-camus-developer/' target='_BLANK'>Juan Pablo Camus</a></label>
     </div>
   );
 }
