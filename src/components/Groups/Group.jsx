@@ -18,10 +18,9 @@ function Group( {groupName, countries, img} ) {
         dispatch(addCountriesGroup(position))
     },[dispatch,position])
     
-    function handlePosition(e){
-        let selectedCountry = e.target.alt === undefined ? e.target.outerText : e.target.alt
+    function handlePosition(e,c){
         
-        if (selectedCountry === '1' || selectedCountry === '2') return
+        let selectedCountry = c
 
         if (position.first === selectedCountry) {
             setPosition({...position, first:''})
@@ -49,7 +48,7 @@ function Group( {groupName, countries, img} ) {
             <h2 className='groupName'>{groupName}</h2>
             <div className='CountriesContainer'>
                 {countries.map(c => (
-                    <div value={c} key={c} className='CountryContainer' onClick={handlePosition}>
+                    <div key={c} className='CountryContainer' onClick={(e)=>{handlePosition(e,c)}}>
                         <img src={
                             c === 'Saudi Arabia' ? img[0].SaudiArabia :
                             c === 'Costa Rica' ? img[0].CostaRica :
