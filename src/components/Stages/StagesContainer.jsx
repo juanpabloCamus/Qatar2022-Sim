@@ -122,6 +122,7 @@ function StagesContainer() {
     }
 
     const CustomSeed = ({seed, breakpoint, roundIndex, seedIndex}) => {
+        
         return (
         <Seed mobileBreakpoint={breakpoint} style={{ fontSize: 16,  }}>
             <SeedItem>
@@ -145,6 +146,13 @@ function StagesContainer() {
     };
 
     return (
+        <div>
+            <div className='mobileChampion'>
+            <img id='cup' src={cup}></img>
+                {
+                    champion.state ? <h3>Congrats {champion.name}!</h3> : null
+                }
+            </div>
         <div className='bracketsContainer'>
             <h3 id='swipe'>Swipe left to see the next rounds</h3>
             <div className='main'>
@@ -156,6 +164,7 @@ function StagesContainer() {
                 }
             </div>
             </div>
+        </div>
         </div> 
     );
 }
