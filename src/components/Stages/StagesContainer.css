@@ -26,6 +26,15 @@
     background-color: #292c3a;
 }
 
+.oNEeH{
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+}
+
+.oNEeH:hover{
+    background-color: #292c3a;
+}
+
 #date{
     margin-top: 10px;
     font-family: arabicNormal;
@@ -92,4 +101,10 @@
     color: #e1c396 !important;
     font-family: qatarBold;
     font-size: 18px;
-} 
+}
+
+.heqMNK{
+    color: #e1c396 !important;
+    font-family: qatarBold;
+    font-size: 18px;
+}
